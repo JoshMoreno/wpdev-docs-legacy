@@ -11,6 +11,17 @@
     ],
     "require": {
         "tightenco/jigsaw": "^1.0",
-        "joshmoreno/wpdev": "v1.1.1-alpha"
+        "joshmoreno/wpdev": "v1.1.1-alpha",
+        "symfony/yaml": "^4.0",
+        "phpdocumentor/reflection-docblock": "^4.3",
+        "danielstjules/stringy": "^3.1",
+        "symfony/console": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WPDev\\Docs\\": "inc/",
+            "WPDev\\Docs\\CLI\\": "cli/"
+        },
+        "files": ["inc/helpers.php"]
     }
 }
