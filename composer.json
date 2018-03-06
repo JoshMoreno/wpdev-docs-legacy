@@ -1,0 +1,16 @@
+{
+    "name": "joshmoreno/wpdev-docs",
+    "description": "Docs for the wpdev plugin.",
+    "homepage": "https://getwpdev.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Moreno",
+            "email": "josh@joshmoreno.com"
+        }
+    ],
+    "require": {
+        "tightenco/jigsaw": "^1.0",
+        "joshmoreno/wpdev": "v1.1.1-alpha"
+    }
+}
