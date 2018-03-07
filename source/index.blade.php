@@ -2,8 +2,8 @@
 
 @section('body')
     <div class="container">
-        <h1 class="display-1">Rapid Modern<br>WordPress Dev</h1>
-        <p class="lead">A framework to ease the pain</p>
+        <h1 class="font-weight-light">Rapid Modern<br>WordPress Dev</h1>
+        <p class="lead text-muted">A framework to ease the pain</p>
     </div>
     <hr>
     <div class="container">
