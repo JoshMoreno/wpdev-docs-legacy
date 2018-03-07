@@ -3,7 +3,5 @@
 return [
     'baseUrl' => '',
     'production' => false,
-    'collections' => [
-        'features'
-    ],
+    'collections' => ['features', 'classes',],
 ];
