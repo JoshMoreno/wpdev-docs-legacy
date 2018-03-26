@@ -7,17 +7,18 @@
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
+    "@joshmoreno/jigsaw": "^0.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "browser-sync": "^2.18.13",
-    "browser-sync-webpack-plugin": "^1.2.0",
+    "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^3.2.3",
-    "hasbin": "^1.2.3",
-    "laravel-mix": "^1.4.2",
-    "node-cmd": "^3.0.0",
-    "on-build-webpack": "^0.1.0",
-    "webpack-watch": "^0.2.0",
-    "yargs": "^4.6.0"
+    "laravel-mix": "^2.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.0.0",
+    "clipboard": "^2.0.0",
+    "prism-theme-one-dark": "^1.0.0",
+    "prismjs": "^1.13.0",
+    "tiny-emitter": "^2.0.2"
   }
 }

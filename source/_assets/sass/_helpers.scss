@@ -1,0 +1,53 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .display#{$infix}-1 { font-size: $display1-size; }
+    .display#{$infix}-2 { font-size: $display2-size; }
+    .display#{$infix}-3 { font-size: $display3-size; }
+    .display#{$infix}-4 { font-size: $display4-size; }
+  }
+}
+
+.no-hover-underline {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.link--secondary {
+  color: $secondary;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.underline {
+	&::after {
+		@extend .mb-4, .mt-2;
+		content: '';
+		display: block;
+		width: 50px;
+		height: 2px;
+		background: $orange;
+	}
+
+	&--primary {
+		background: $primary;
+	}
+
+	&--secondary::after {
+		background: $secondary;
+	}
+}
+
+
+.line-height{
+	&-1 {
+		line-height: 1;
+	}
+	&-2 {
+		line-height: 1.7;
+	}
+}
