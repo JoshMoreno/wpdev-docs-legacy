@@ -1,5 +1,8 @@
 <?php
 
+use WPDev\Docs\ClassParser;
+use WPDev\Template\Template;
+
 return [
     'baseUrl' => '',
     'production' => false,
@@ -10,4 +13,8 @@ return [
     'activeClass' => function ($page, $section) {
 	    return ($page->getPath() === $section) ? 'active' : '';
     },
+
+	'classes' => [
+		'Template' => new ClassParser(Template::class),
+	]
 ];

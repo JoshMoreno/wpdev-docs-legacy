@@ -18,7 +18,7 @@ class ParseClasses extends Command
     public function __construct($name = null)
     {
         parent::__construct($name);
-        $this->loader = require dirname(__DIR__).'/vendor/autoload.php';
+        $this->loader = require dirname(__DIR__, 2).'/vendor/autoload.php';
     }
 
     protected function configure()

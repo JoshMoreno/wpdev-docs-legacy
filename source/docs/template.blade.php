@@ -43,4 +43,9 @@
             </code>
         </pre>
     @endcomponent
+    @php
+    /** @var \WPDev\Docs\ClassParser $class */
+        $class = $page['classes']['Template'];
+    @endphp
+    {{$class->getShortName()}}
 @endsection
