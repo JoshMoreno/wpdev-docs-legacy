@@ -22,6 +22,7 @@
             Naming
         @endslot
         <p>Create controllers following the same naming convention as the <a href="https://wphierarchy.com/">WP Template Hierarchy</a>. And feel free to organize into subfolders.</p>
+        <p>You can name the class whatever you'd like, but a good rule of thumb would be to name it after the file using upper camel case (aka pascal case). For example, if you have a <code>single-post.php</code> file you would name the class <code>SinglePost</code>.</p>
         <h5 class="mt-4">Examples</h5>
         <div>
             <p>Front Page - <code>controllers/front-page.php</code></p>
@@ -46,14 +47,15 @@
         @slot('title')
             Boilerplate
         @endslot
+        <p>Use the snippet below to get started even faster. Just rename <code>&#123;&#123;MyTheme&#125;&#125;</code> to the namespace of your theme or project and change <code>&#123;&#123;SinglePost&#125;&#125;</code> to something that makes sense.</p>
         <pre>
             <code class="language-php">
                 &lt;?php
-                namespace MyTheme;
+                namespace &#123;&#123;MyTheme&#125;&#125;;
 
                 use WPDev\Controller\ControllerInterface;
 
-                class SinglePost implements ControllerInterface
+                class &#123;&#123;SinglePost&#125;&#125; implements ControllerInterface
                 {
                     /**
                     * The default data set by wpdev before calling build()

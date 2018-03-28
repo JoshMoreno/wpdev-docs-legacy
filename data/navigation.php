@@ -7,8 +7,7 @@ return [
     MenuItem::create('Getting Started')->children([
         MenuItem::create('Overview', '/docs'),
         MenuItem::create('Controllers', '/docs/controllers'),
-        MenuItem::create('Collections'),
-        MenuItem::create('Template Helpers'),
+        MenuItem::create('Collections', '/docs/collections'),
         MenuItem::create('Hooks'),
     ]),
     MenuItem::create('Models')->children([
@@ -19,4 +18,8 @@ return [
         MenuItem::create('PostType'),
         MenuItem::create('OptionsPage'),
     ]),
+	MenuItem::create('Template Helpers')->children([
+		MenuItem::create('Template', '/docs/template'),
+		MenuItem::create('Plugin Template', '/docs/plugin-template'),
+	]),
 ];

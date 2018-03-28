@@ -9,6 +9,7 @@
             <main class="py-4 col-lg-8 col-xl-9">
                 <h2 class="underline line-height-1">@yield('page_title')</h2>
                 @yield('content')
+                <a></a>
             </main>
         </div>
     </div>
