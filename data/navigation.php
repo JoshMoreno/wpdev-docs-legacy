@@ -8,7 +8,7 @@ return [
         MenuItem::create('Overview', '/docs'),
         MenuItem::create('Controllers', '/docs/controllers'),
         MenuItem::create('Collections', '/docs/collections'),
-        MenuItem::create('Hooks'),
+        MenuItem::create('Hooks', '/docs/hooks'),
     ]),
     MenuItem::create('Models')->children([
         MenuItem::create('Post'),
