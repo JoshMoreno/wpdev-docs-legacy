@@ -16,5 +16,6 @@ return [
 
 	'classes' => [
 		'Template' => new ClassParser(Template::class),
-	]
+		'PluginTemplate' => new ClassParser(Template::class),
+	],
 ];

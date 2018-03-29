@@ -50,4 +50,5 @@
             </code>
         </pre>
     @endcomponent
+    @include('_partials.docs.apiReference', ['class' => $page['classes']['PluginTemplate']])
 @endsection
