@@ -63,11 +63,11 @@
                 <section class="method-detail__section mb-4">
                     <div class="text-muted mb-1"><strong>Returns</strong></div>
                     <div class="row">
-                        <div class="col-sm-3 col-md-2">
-                            <p>{{$method->getReturnType()}}</p>
+                        <div class="col-auto mr-2">
+                            <p>{{str_replace('|', ' | ', $method->getReturnType())}}</p>
                         </div>
-                        <div class="col-sm-9 col-md-10">
-                            <p>{!! backticksToCodeTags($method->getReturnDescription()) !!}</p>
+                        <div class="col-auto">
+                            <p>{!! backticksToCodeTags( $method->getReturnDescription()) !!}</p>
                         </div>
                     </div>
                 </section>
