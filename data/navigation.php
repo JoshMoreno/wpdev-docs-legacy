@@ -11,8 +11,8 @@ return [
         MenuItem::create('Hooks', '/docs/hooks'),
     ]),
     MenuItem::create('Models')->children([
-        MenuItem::create('Post'),
-        MenuItem::create('Image'),
+        MenuItem::create('Post', '/docs/post'),
+        MenuItem::create('Image', '/docs/image'),
     ]),
     MenuItem::create('Facades')->children([
         MenuItem::create('PostType'),
