@@ -32,7 +32,9 @@
 <ul class="list-unstyled">
     @foreach($class->getPublicMethods() as $method)
         <li id="api-{{$method->getName()}}" class="method-detail py-4 {{!$loop->last ? 'border-bottom border-dark' : ''}}">
-            <h4>{{$method->getName()}}</h4>
+            @component('_components.anchorMethod')
+                {{$method->getName()}}
+            @endcomponent
             <p class="lead">{!! $method->getSynopsis() !!}</p>
 
 
