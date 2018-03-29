@@ -10,17 +10,14 @@
         }
     ],
     "require": {
-        "tightenco/jigsaw": "^1.0",
-        "joshmoreno/wpdev": "v1.1.1-alpha",
-        "symfony/yaml": "^4.0",
-        "phpdocumentor/reflection-docblock": "^4.3",
-        "danielstjules/stringy": "^3.1",
-        "symfony/console": "^4.0",
-        "symfony/filesystem": "^4.0"
+        "tightenco/jigsaw": "^1.1",
+        "joshmoreno/wpdev": "v1.2.0-alpha",
+        "phpdocumentor/reflection-docblock": "^4.3"
     },
     "autoload": {
         "psr-4": {
             "WPDev\\Docs\\": "inc/"
-        }
+        },
+      "files": ["inc/helpers.php"]
     }
 }

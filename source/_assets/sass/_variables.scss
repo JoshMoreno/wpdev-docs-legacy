@@ -3,6 +3,7 @@ $blue: #47b1c2;
 $purple: #4d4563;
 $yellow: #d6d182;
 $green: #7dc581;
+$dark: #22283c;
 
 //$primary: #04D3B4;
 $primary: $blue;
@@ -10,8 +11,7 @@ $secondary: $purple;
 $body-bg: #181D28;
 $body-color: #fff;
 $text-muted: #8991a2;
-$header-bg: #22283c;
-$dark: $header-bg;
+$header-bg: $dark;
 
 
 $border-radius: .1em;
@@ -28,3 +28,5 @@ $transition-base: all .1s ease-in-out;
 $btn-transition: $transition-base;
 
 $code-color: $orange;
+
+$table-border-color:  lighten($dark, 10%);
