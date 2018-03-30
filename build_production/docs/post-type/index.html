@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/main.css?id=8038686cfdd9f952ae4b">
+    <!--use just the brands and solid styles-->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+            <title>PostType | WPDev</title>
+    </head>
+<body class="d-flex flex-column ">
+    <header class="py-2 site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark header-container">
+        <div class="logo-wrap">
+            <h4 class="m-0">
+                <a href="/">wpdev</a>
+            </h4>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <a href="/docs" class="btn btn-secondary">Docs</a>
+        </div>
+    </nav>
+</header>        <div class="container">
+        <div class="row">
+            <aside class="py-4 d-none d-lg-block col-lg-4 col-xl-3">
+                <ul class="list-unstyled menu-depth--1 row line-height-2">
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Getting Started</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs"
+                            >
+                                Overview
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/default-data"
+                            >
+                                Default Data
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/controllers"
+                            >
+                                Controllers
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/collections"
+                            >
+                                Collections
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/hooks"
+                            >
+                                Hooks
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Models</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/post"
+                            >
+                                Post
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/image"
+                            >
+                                Image
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Facades</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white active"
+                               href="/docs/post-type"
+                            >
+                                PostType
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/options-page"
+                            >
+                                OptionsPage
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Template Helpers</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/template"
+                            >
+                                Template
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/plugin-template"
+                            >
+                                Plugin Template
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+    </ul>            </aside>
+            <main class="py-4 col-lg-8 col-xl-9">
+                <h2 class="underline line-height-1">PostType</h2>
+                    <section id="Requirements" class="pb-4">
+        <p>Register custom post types with ease.</p>
+</section>
+    <section id="Requirements" class="pb-4">
+            <h3 class="underline underline--secondary">
+            <a href="#usage" class="text-secondary no-hover-underline h5">
+                <i class="fas fa-hashtag"></i>
+            </a>
+            Usage
+        </h3>
+        <pre>
+    <code class="language-php">
+            use WPDev\Facades\PostType;
+
+PostType::create(&#039;project&#039;)
+-&gt;supportsPageAttributes()
+-&gt;menuIcon(&#039;dashicons-hammer&#039;)
+-&gt;register();
+    </code>
+</pre>
+</section>
+    <section id="Requirements" class="pb-4">
+            <h3 class="underline underline--secondary">
+            <a href="#api-reference" class="text-secondary no-hover-underline h5">
+                <i class="fas fa-hashtag"></i>
+            </a>
+            API Reference
+        </h3>
+        <h5 class="mb-3">Public Methods</h5>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Method</td>
+            <td>Summary</td>
+        </tr>
+    </thead>
+    <tbody>
+                    <tr>
+                <td>
+                    <a href="#api-__construct">
+                        __construct
+                    </a>
+                                    </td>
+                <td>
+                    Constructor. For more fluid syntax use <code>PostType::create()</code>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-canExport">
+                        canExport
+                    </a>
+                                    </td>
+                <td>
+                    Whether or not the post_type can be exported
+Default: true
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-create">
+                        create
+                    </a>
+                                            <br>
+                        <small><em>static</em></small>
+                                    </td>
+                <td>
+                    For a more fluid syntax.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-deleteWithUser">
+                        deleteWithUser
+                    </a>
+                                    </td>
+                <td>
+                    Whether to delete posts of this type when deleting a user. If true, posts of this type
+belonging to the user will be moved to trash when then user is deleted. If false, posts
+of this type belonging to the user will not be trashed or deleted. If not set (the default),
+posts are trashed if post_type_supports('author'). Otherwise posts are not trashed or deleted.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-deregister">
+                        deregister
+                    </a>
+                                    </td>
+                <td>
+                    Deregisters the post type.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-hasArchive">
+                        hasArchive
+                    </a>
+                                    </td>
+                <td>
+                    Enables post type archives. Will use $post_type as archive slug by default.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-permalinkEPMask">
+                        permalinkEPMask
+                    </a>
+                                    </td>
+                <td>
+                    This sets the endpoint mask. However <code>rewrite['ep_mask']</code> takes precedence if it's set there too.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-queryVar">
+                        queryVar
+                    </a>
+                                    </td>
+                <td>
+                    True (default) will use the post type slug
+False disables query_var key use. A post type cannot be loaded at /?{query_var}={single_post_slug}
+A string essentially overrides the post type slug /?{query_var_string}={single_post_slug}
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-registerManually">
+                        registerManually
+                    </a>
+                                    </td>
+                <td>
+                    Use this method if you want to take care of all the hooks.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-register">
+                        register
+                    </a>
+                                    </td>
+                <td>
+                    Registers the post type. Hooks and all.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-registerMetaBoxCB">
+                        registerMetaBoxCB
+                    </a>
+                                    </td>
+                <td>
+                    Provide a callback function that will be called when setting up the meta boxes for the edit form.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-restBase">
+                        restBase
+                    </a>
+                                    </td>
+                <td>
+                    The base slug that this post type will use when accessed using the REST API.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-restControllerClass">
+                        restControllerClass
+                    </a>
+                                    </td>
+                <td>
+                    An optional custom controller to use instead of <code>WP_REST_Posts_Controller</code>. Must be a subclass of <code>WP_REST_Controller</code>.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-rewrite">
+                        rewrite
+                    </a>
+                                    </td>
+                <td>
+                    Set the <code>rewrite</code> arg.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-setArg">
+                        setArg
+                    </a>
+                                    </td>
+                <td>
+                    Set an arg. Can be used to override the defaults.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-showInRest">
+                        showInRest
+                    </a>
+                                    </td>
+                <td>
+                    Whether to expose this post type in the <code>REST API</code>.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-excludeFromSearch">
+                        excludeFromSearch
+                    </a>
+                                    </td>
+                <td>
+                    Exclude from search results
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-hierarchical">
+                        hierarchical
+                    </a>
+                                    </td>
+                <td>
+                    Whether the post type is hierarchical (e.g. page).
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-mapMetaCap">
+                        mapMetaCap
+                    </a>
+                                    </td>
+                <td>
+                    Whether to use the internal default meta capability handling.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-menuIcon">
+                        menuIcon
+                    </a>
+                                    </td>
+                <td>
+                    The menu icon.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-menuPosition">
+                        menuPosition
+                    </a>
+                                    </td>
+                <td>
+                    The position in the menu order the post type should appear.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-removeSupport">
+                        removeSupport
+                    </a>
+                                    </td>
+                <td>
+                    Removes a supports arg. Use this to remove one of the defaults.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-setPluralName">
+                        setPluralName
+                    </a>
+                                    </td>
+                <td>
+                    Set the plural name. Useful if simply appending an 's' isn't grammatically correct.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-public">
+                        public
+                    </a>
+                                    </td>
+                <td>
+                    Sets the <code>public</code> arg.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-publiclyQueryable">
+                        publiclyQueryable
+                    </a>
+                                    </td>
+                <td>
+                    Whether queries can be performed on the front end as part of parse_request().
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-showInAdminBar">
+                        showInAdminBar
+                    </a>
+                                    </td>
+                <td>
+                    Whether to make this post type available in the WordPress admin bar.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-showInMenu">
+                        showInMenu
+                    </a>
+                                    </td>
+                <td>
+                    Show this post type in the menu.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-showInNavMenus">
+                        showInNavMenus
+                    </a>
+                                    </td>
+                <td>
+                    Post type is available for selection in navigation menus.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-showUI">
+                        showUI
+                    </a>
+                                    </td>
+                <td>
+                    Whether to generate a default UI for managing this post type in the admin.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-setSingularName">
+                        setSingularName
+                    </a>
+                                    </td>
+                <td>
+                    Overrides auto generated singular name.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsAuthor">
+                        supportsAuthor
+                    </a>
+                                    </td>
+                <td>
+                    Support author.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsComments">
+                        supportsComments
+                    </a>
+                                    </td>
+                <td>
+                    Support comments.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsCustomFields">
+                        supportsCustomFields
+                    </a>
+                                    </td>
+                <td>
+                    Support custom fields.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsEditor">
+                        supportsEditor
+                    </a>
+                                    </td>
+                <td>
+                    Support editor.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsExcerpt">
+                        supportsExcerpt
+                    </a>
+                                    </td>
+                <td>
+                    Support excerpt.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsFeaturedImage">
+                        supportsFeaturedImage
+                    </a>
+                                    </td>
+                <td>
+                    Support featured image (aka thumbnail).
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsPageAttributes">
+                        supportsPageAttributes
+                    </a>
+                                    </td>
+                <td>
+                    Support page attributes.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsPostFormats">
+                        supportsPostFormats
+                    </a>
+                                    </td>
+                <td>
+                    Support post formats.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsRevisions">
+                        supportsRevisions
+                    </a>
+                                    </td>
+                <td>
+                    Support revisions.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsThumbnail">
+                        supportsThumbnail
+                    </a>
+                                    </td>
+                <td>
+                    Alternative to <code>@see supportsFeaturedImage</code>. Support featured image (aka thumbnail).
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsTitle">
+                        supportsTitle
+                    </a>
+                                    </td>
+                <td>
+                    Support title.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supportsTrackbacks">
+                        supportsTrackbacks
+                    </a>
+                                    </td>
+                <td>
+                    Support trackbacks.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-supports">
+                        supports
+                    </a>
+                                    </td>
+                <td>
+                    False can be passed as value instead of an array to
+prevent default (title and editor) behavior
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-taxonomies">
+                        taxonomies
+                    </a>
+                                    </td>
+                <td>
+                    An array of registered taxonomies like category or post_tag that will be used with this post type.
+                </td>
+            </tr>
+            </tbody>
+</table>
+<ul class="list-unstyled">
+            <li id="api-__construct" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-construct" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    __construct
+</h4>            <p class="lead">__construct( string <code>$name</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Constructor. For more fluid syntax use <code>PostType::create()</code>
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                The name of the post type. Should be singular.
+                            </div>
+                        </div>
+                                    </section>
+            
+            
+        </li>
+            <li id="api-canExport" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-canexport" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    canExport
+</h4>            <p class="lead">canExport( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether or not the post_type can be exported
+Default: true
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-create" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-create" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    create
+</h4>            <p class="lead">create( string <code>$name</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    For a more fluid syntax.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-deleteWithUser" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-deletewithuser" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    deleteWithUser
+</h4>            <p class="lead">deleteWithUser( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether to delete posts of this type when deleting a user. If true, posts of this type
+belonging to the user will be moved to trash when then user is deleted. If false, posts
+of this type belonging to the user will not be trashed or deleted. If not set (the default),
+posts are trashed if post_type_supports('author'). Otherwise posts are not trashed or deleted.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-deregister" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-deregister" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    deregister
+</h4>            <p class="lead">deregister( )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Deregisters the post type.
+                </section>
+            
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>bool | \WP_Error</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-hasArchive" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-hasarchive" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    hasArchive
+</h4>            <p class="lead">hasArchive( [ bool | string <code>$val</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Enables post type archives. Will use $post_type as archive slug by default.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                val
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-permalinkEPMask" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-permalinkepmask" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    permalinkEPMask
+</h4>            <p class="lead">permalinkEPMask( int <code>$endpoint</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    This sets the endpoint mask. However <code>rewrite['ep_mask']</code> takes precedence if it's set there too.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                endpoint
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                Constant preferred to avoid future failure (core updates)
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-queryVar" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-queryvar" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    queryVar
+</h4>            <p class="lead">queryVar( [ bool | string <code>$query_var</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    True (default) will use the post type slug
+False disables query_var key use. A post type cannot be loaded at /?{query_var}={single_post_slug}
+A string essentially overrides the post type slug /?{query_var_string}={single_post_slug}
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                query_var
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-registerManually" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-registermanually" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    registerManually
+</h4>            <p class="lead">registerManually( )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Use this method if you want to take care of all the hooks.
+                </section>
+            
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>\WP_Error | \WP_Post_Type</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-register" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-register" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    register
+</h4>            <p class="lead">register( )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Registers the post type. Hooks and all.
+                </section>
+            
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-registerMetaBoxCB" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-registermetaboxcb" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    registerMetaBoxCB
+</h4>            <p class="lead">registerMetaBoxCB( callable <code>$callback</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Provide a callback function that will be called when setting up the meta boxes for the edit form.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                callback
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-restBase" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-restbase" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    restBase
+</h4>            <p class="lead">restBase( string <code>$rest_base</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    The base slug that this post type will use when accessed using the REST API.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                rest_base
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-restControllerClass" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-restcontrollerclass" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    restControllerClass
+</h4>            <p class="lead">restControllerClass( [ string <code>$controller</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    An optional custom controller to use instead of <code>WP_REST_Posts_Controller</code>. Must be a subclass of <code>WP_REST_Controller</code>.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                controller
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-rewrite" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-rewrite" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    rewrite
+</h4>            <p class="lead">rewrite( [ array | bool <code>$val</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Set the <code>rewrite</code> arg.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                val
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                (see above)
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-setArg" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-setarg" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    setArg
+</h4>            <p class="lead">setArg( [ string <code>$key</code>, mixed <code>$val</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Set an arg. Can be used to override the defaults.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                key
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                val
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-showInRest" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-showinrest" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    showInRest
+</h4>            <p class="lead">showInRest( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether to expose this post type in the <code>REST API</code>.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-excludeFromSearch" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-excludefromsearch" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    excludeFromSearch
+</h4>            <p class="lead">excludeFromSearch( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Exclude from search results
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-hierarchical" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-hierarchical" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    hierarchical
+</h4>            <p class="lead">hierarchical( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether the post type is hierarchical (e.g. page).
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-mapMetaCap" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-mapmetacap" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    mapMetaCap
+</h4>            <p class="lead">mapMetaCap( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether to use the internal default meta capability handling.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-menuIcon" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-menuicon" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    menuIcon
+</h4>            <p class="lead">menuIcon( [ string <code>$icon</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    The menu icon.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                icon
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                name of Dashicon, URL to icon, or base64 encoded svg with fill=&quot;black&quot;
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-menuPosition" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-menuposition" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    menuPosition
+</h4>            <p class="lead">menuPosition( [ int <code>$position</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    The position in the menu order the post type should appear.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                position
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-removeSupport" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-removesupport" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    removeSupport
+</h4>            <p class="lead">removeSupport( int | string <code>$feature</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Removes a supports arg. Use this to remove one of the defaults.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                feature
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                The feature to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-setPluralName" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-setpluralname" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    setPluralName
+</h4>            <p class="lead">setPluralName( [ string <code>$plural_name</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Set the plural name. Useful if simply appending an 's' isn't grammatically correct.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                plural_name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-public" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-public" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    public
+</h4>            <p class="lead">public( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Sets the <code>public</code> arg.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-publiclyQueryable" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-publiclyqueryable" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    publiclyQueryable
+</h4>            <p class="lead">publiclyQueryable( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether queries can be performed on the front end as part of parse_request().
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-showInAdminBar" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-showinadminbar" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    showInAdminBar
+</h4>            <p class="lead">showInAdminBar( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether to make this post type available in the WordPress admin bar.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-showInMenu" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-showinmenu" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    showInMenu
+</h4>            <p class="lead">showInMenu( [ bool | string <code>$val</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Show this post type in the menu.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                val
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                - If string is given it will be a submenu
+if that url exists. Examples: &#039;tools.php&#039; or &#039;edit.php?post_type=page&#039;;
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-showInNavMenus" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-showinnavmenus" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    showInNavMenus
+</h4>            <p class="lead">showInNavMenus( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Post type is available for selection in navigation menus.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-showUI" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-showui" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    showUI
+</h4>            <p class="lead">showUI( [ bool <code>$bool</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Whether to generate a default UI for managing this post type in the admin.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                bool
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-setSingularName" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-setsingularname" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    setSingularName
+</h4>            <p class="lead">setSingularName( [ string <code>$singular_name</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Overrides auto generated singular name.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                singular_name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsAuthor" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportsauthor" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsAuthor
+</h4>            <p class="lead">supportsAuthor( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support author.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsComments" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportscomments" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsComments
+</h4>            <p class="lead">supportsComments( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support comments.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsCustomFields" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportscustomfields" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsCustomFields
+</h4>            <p class="lead">supportsCustomFields( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support custom fields.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsEditor" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportseditor" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsEditor
+</h4>            <p class="lead">supportsEditor( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support editor.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsExcerpt" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportsexcerpt" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsExcerpt
+</h4>            <p class="lead">supportsExcerpt( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support excerpt.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsFeaturedImage" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportsfeaturedimage" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsFeaturedImage
+</h4>            <p class="lead">supportsFeaturedImage( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support featured image (aka thumbnail).
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsPageAttributes" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportspageattributes" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsPageAttributes
+</h4>            <p class="lead">supportsPageAttributes( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support page attributes.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsPostFormats" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportspostformats" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsPostFormats
+</h4>            <p class="lead">supportsPostFormats( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support post formats.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsRevisions" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportsrevisions" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsRevisions
+</h4>            <p class="lead">supportsRevisions( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support revisions.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsThumbnail" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportsthumbnail" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsThumbnail
+</h4>            <p class="lead">supportsThumbnail( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Alternative to <code>@see supportsFeaturedImage</code>. Support featured image (aka thumbnail).
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsTitle" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportstitle" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsTitle
+</h4>            <p class="lead">supportsTitle( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support title.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supportsTrackbacks" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supportstrackbacks" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supportsTrackbacks
+</h4>            <p class="lead">supportsTrackbacks( [ bool <code>$add</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Support trackbacks.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                add
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                True (default) to add, False to remove.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-supports" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-supports" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    supports
+</h4>            <p class="lead">supports( array | bool | string <code>$features</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    False can be passed as value instead of an array to
+prevent default (title and editor) behavior
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                features
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-taxonomies" class="method-detail py-4 ">
+            <h4>
+    <a href="#api-taxonomies" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    taxonomies
+</h4>            <p class="lead">taxonomies( [ array <code>$taxonomies</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    An array of registered taxonomies like category or post_tag that will be used with this post type.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                taxonomies
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+    </ul>
+</section>                <a></a>
+            </main>
+        </div>
+    </div>
+    <footer class="mt-auto d-flex py-5 bg-dark">
+    <a href="https://github.com/JoshMoreno/wpdev" class="m-auto d-flex text-white justify-content-center align-items-center">
+        <i class="fab fa-github h1 mb-0"></i>
+        <span class="ml-2">View on GitHub</span>
+    </a>
+</footer>
+    <div class="off-canvas-menu">
+        <nav class="mobile-nav p-3 p-sm-4">
+            <ul class="list-unstyled menu-depth--1 row line-height-2">
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Getting Started</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs"
+                            >
+                                Overview
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/default-data"
+                            >
+                                Default Data
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/controllers"
+                            >
+                                Controllers
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/collections"
+                            >
+                                Collections
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/hooks"
+                            >
+                                Hooks
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Models</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/post"
+                            >
+                                Post
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/image"
+                            >
+                                Image
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Facades</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white active"
+                               href="/docs/post-type"
+                            >
+                                PostType
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/options-page"
+                            >
+                                OptionsPage
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Template Helpers</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/template"
+                            >
+                                Template
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/plugin-template"
+                            >
+                                Plugin Template
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+    </ul>        </nav>
+    </div>
+
+    <div class="fixed-mobile-nav d-lg-none">
+        <div class="fixed-mobile-nav__circle-overlay"></div>
+        <button type="button" class="menu-icon menu-toggle">
+    <div class="menu-icon__line menu-icon__top"></div>
+    <div class="menu-icon__middle">
+        <div class="menu-icon__line menu-icon__middle-1"></div>
+        <div class="menu-icon__line menu-icon__middle-2"></div>
+    </div>
+    <div class="menu-icon__line menu-icon__bottom"></div>
+</button>    </div>
+    <script src="/assets/js/main.js?id=63cf65cae9c2b1f68ba2"></script>
+</body>
+</html>

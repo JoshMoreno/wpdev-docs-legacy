@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/main.css?id=8038686cfdd9f952ae4b">
+    <!--use just the brands and solid styles-->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+            <title>Template | WPDev</title>
+    </head>
+<body class="d-flex flex-column ">
+    <header class="py-2 site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark header-container">
+        <div class="logo-wrap">
+            <h4 class="m-0">
+                <a href="/">wpdev</a>
+            </h4>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <a href="/docs" class="btn btn-secondary">Docs</a>
+        </div>
+    </nav>
+</header>        <div class="container">
+        <div class="row">
+            <aside class="py-4 d-none d-lg-block col-lg-4 col-xl-3">
+                <ul class="list-unstyled menu-depth--1 row line-height-2">
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Getting Started</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs"
+                            >
+                                Overview
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/default-data"
+                            >
+                                Default Data
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/controllers"
+                            >
+                                Controllers
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/collections"
+                            >
+                                Collections
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/hooks"
+                            >
+                                Hooks
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Models</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/post"
+                            >
+                                Post
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/image"
+                            >
+                                Image
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Facades</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/post-type"
+                            >
+                                PostType
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/options-page"
+                            >
+                                OptionsPage
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Template Helpers</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white active"
+                               href="/docs/template"
+                            >
+                                Template
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/plugin-template"
+                            >
+                                Plugin Template
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+    </ul>            </aside>
+            <main class="py-4 col-lg-8 col-xl-9">
+                <h2 class="underline line-height-1">Template</h2>
+                    <section id="Requirements" class="pb-4">
+        <p>Easily include and pass data to theme templates.</p>
+</section>
+    <section id="Requirements" class="pb-4">
+            <h3 class="underline underline--secondary">
+            <a href="#requirements" class="text-secondary no-hover-underline h5">
+                <i class="fas fa-hashtag"></i>
+            </a>
+            Requirements
+        </h3>
+        <p>By default, the file must be located within the the theme's <code>templates</code> folder. Subfolders are fine as the directory is traversed recursively.</p>
+        <p>When working with child themes it works as you'd expect, child theme templates have precedence over parent theme templates.</p>
+</section>
+    <section id="Requirements" class="pb-4">
+            <h3 class="underline underline--secondary">
+            <a href="#simple-include" class="text-secondary no-hover-underline h5">
+                <i class="fas fa-hashtag"></i>
+            </a>
+            Simple Include
+        </h3>
+        <pre>
+    <code class="language-php">
+            use WPDev\Template\Template;
+
+            Template::include('reusable-component.php');
+            // or with global function
+            template('reusable-component.php');
+    </code>
+</pre>
+</section>
+    <section id="Requirements" class="pb-4">
+            <h3 class="underline underline--secondary">
+            <a href="#include-with-data" class="text-secondary no-hover-underline h5">
+                <i class="fas fa-hashtag"></i>
+            </a>
+            Include with Data
+        </h3>
+        <pre>
+    <code class="language-php">
+            use WPDev\Template\Template;
+
+            Template::include('reusable-component.php', ['title' => 'So Easy']);
+            // or with global function
+            template('reusable-component.php', ['title' => 'So Easy']);
+    </code>
+</pre>
+</section>    <section id="Requirements" class="pb-4">
+            <h3 class="underline underline--secondary">
+            <a href="#api-reference" class="text-secondary no-hover-underline h5">
+                <i class="fas fa-hashtag"></i>
+            </a>
+            API Reference
+        </h3>
+        <h5 class="mb-3">Public Methods</h5>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Method</td>
+            <td>Summary</td>
+        </tr>
+    </thead>
+    <tbody>
+                    <tr>
+                <td>
+                    <a href="#api-__construct">
+                        __construct
+                    </a>
+                                    </td>
+                <td>
+                    Constructor. Alternatively use <code>Template::include()</code> or <code>Template::locate()</code>.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-create">
+                        create
+                    </a>
+                                            <br>
+                        <small><em>static</em></small>
+                                    </td>
+                <td>
+                    For a more fluid syntax. Alternatively use <code>Template::include()</code> or <code>Template::locate()</code>.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-getTemplate">
+                        getTemplate
+                    </a>
+                                    </td>
+                <td>
+                    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-include">
+                        include
+                    </a>
+                                            <br>
+                        <small><em>static</em></small>
+                                    </td>
+                <td>
+                    Include a theme template file. Optionally pass data.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-includeTemplate">
+                        includeTemplate
+                    </a>
+                                    </td>
+                <td>
+                    Includes the template file passing along the data.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#api-locate">
+                        locate
+                    </a>
+                                            <br>
+                        <small><em>static</em></small>
+                                    </td>
+                <td>
+                    Locates a template file.
+                </td>
+            </tr>
+            </tbody>
+</table>
+<ul class="list-unstyled">
+            <li id="api-__construct" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-construct" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    __construct
+</h4>            <p class="lead">__construct( string <code>$file_name</code> [, array <code>$data</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Constructor. Alternatively use <code>Template::include()</code> or <code>Template::locate()</code>.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                file_name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                data
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+            
+        </li>
+            <li id="api-create" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-create" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    create
+</h4>            <p class="lead">create( string <code>$file_name</code> [, array <code>$data</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    For a more fluid syntax. Alternatively use <code>Template::include()</code> or <code>Template::locate()</code>.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                file_name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                data
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>$this</p>
+                        </div>
+                        <div class="col-auto">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-getTemplate" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-gettemplate" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    getTemplate
+</h4>            <p class="lead">getTemplate( )</p>
+
+
+            
+            
+            
+        </li>
+            <li id="api-include" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-include" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    include
+</h4>            <p class="lead">include( string <code>$file_name</code> [, array <code>$data</code> ] )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Include a theme template file. Optionally pass data.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                file_name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                The file name of the template.
+                            </div>
+                        </div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                data
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                Data to be passed to view. Will also be extracted into variables.
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>bool</p>
+                        </div>
+                        <div class="col-auto">
+                            <p>True if successfully included the template. Otherwise, false.</p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-includeTemplate" class="method-detail py-4 border-bottom border-dark">
+            <h4>
+    <a href="#api-includetemplate" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    includeTemplate
+</h4>            <p class="lead">includeTemplate( )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Includes the template file passing along the data.
+                </section>
+            
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>bool</p>
+                        </div>
+                        <div class="col-auto">
+                            <p>True if successfully included the template. Otherwise, false.</p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+            <li id="api-locate" class="method-detail py-4 ">
+            <h4>
+    <a href="#api-locate" class="text-secondary no-hover-underline h5">
+        <i class="fas fa-hashtag"></i>
+    </a>
+    locate
+</h4>            <p class="lead">locate( string <code>$file_name</code> )</p>
+
+
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Summary</strong></div>
+                    Locates a template file.
+                </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Parameters</strong></div>
+                                            <div class="mb-2 row">
+                            <div class="col-sm-3 col-md-2">
+                                file_name
+                            </div>
+                            <div class="col-sm-9 col-md-10">
+                                
+                            </div>
+                        </div>
+                                    </section>
+            
+                            <section class="method-detail__section mb-4">
+                    <div class="text-muted mb-1"><strong>Returns</strong></div>
+                    <div class="row">
+                        <div class="col-auto mr-2">
+                            <p>string</p>
+                        </div>
+                        <div class="col-auto">
+                            <p>The path to the template file. Empty if none found.</p>
+                        </div>
+                    </div>
+                </section>
+            
+        </li>
+    </ul>
+</section>                <a></a>
+            </main>
+        </div>
+    </div>
+    <footer class="mt-auto d-flex py-5 bg-dark">
+    <a href="https://github.com/JoshMoreno/wpdev" class="m-auto d-flex text-white justify-content-center align-items-center">
+        <i class="fab fa-github h1 mb-0"></i>
+        <span class="ml-2">View on GitHub</span>
+    </a>
+</footer>
+    <div class="off-canvas-menu">
+        <nav class="mobile-nav p-3 p-sm-4">
+            <ul class="list-unstyled menu-depth--1 row line-height-2">
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Getting Started</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs"
+                            >
+                                Overview
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/default-data"
+                            >
+                                Default Data
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/controllers"
+                            >
+                                Controllers
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/collections"
+                            >
+                                Collections
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/hooks"
+                            >
+                                Hooks
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Models</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/post"
+                            >
+                                Post
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/image"
+                            >
+                                Image
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Facades</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/post-type"
+                            >
+                                PostType
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/options-page"
+                            >
+                                OptionsPage
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li class="col-12 pb-5">
+                            <h6 class="text-muted mb-3">Template Helpers</h6>
+            
+                            <ul class="list-unstyled menu-depth--2">
+                                            <li>
+                            <a class="text-white active"
+                               href="/docs/template"
+                            >
+                                Template
+                            </a>
+                        </li>
+                                            <li>
+                            <a class="text-white "
+                               href="/docs/plugin-template"
+                            >
+                                Plugin Template
+                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+    </ul>        </nav>
+    </div>
+
+    <div class="fixed-mobile-nav d-lg-none">
+        <div class="fixed-mobile-nav__circle-overlay"></div>
+        <button type="button" class="menu-icon menu-toggle">
+    <div class="menu-icon__line menu-icon__top"></div>
+    <div class="menu-icon__middle">
+        <div class="menu-icon__line menu-icon__middle-1"></div>
+        <div class="menu-icon__line menu-icon__middle-2"></div>
+    </div>
+    <div class="menu-icon__line menu-icon__bottom"></div>
+</button>    </div>
+    <script src="/assets/js/main.js?id=63cf65cae9c2b1f68ba2"></script>
+</body>
+</html>
