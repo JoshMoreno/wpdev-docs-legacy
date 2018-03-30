@@ -40,5 +40,5 @@
             template('reusable-component.php', ['title' => 'So Easy']);
         @endsnippetPhp
     @enddocsSection
-    @include('_partials.docs.apiReference', ['class' => $page['classes']['Template']])
+    @include('_partials.docs.apiReference', ['class' => \WPDev\Template\Template::class])
 @endsection

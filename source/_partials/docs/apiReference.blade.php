@@ -1,3 +1,7 @@
+@php
+    $class = new \WPDev\Docs\ClassParser($class);
+@endphp
+
 @docsSection
 @slot('title')
     API Reference
@@ -35,7 +39,7 @@
             @component('_components.anchorMethod')
                 {{$method->getName()}}
             @endcomponent
-            <p class="lead">{!! $method->getSynopsis() !!}</p>
+            <p class="lead">{!! str_replace('|', ' | ', $method->getSynopsis()) !!}</p>
 
 
             @if($method->getSummary())

@@ -1,9 +1,6 @@
 <?php
 
-use WPDev\Docs\ClassParser;
-use WPDev\Models\Image;
-use WPDev\Models\Post;
-use WPDev\Template\Template;
+use Illuminate\View\Compilers\BladeCompiler;
 
 return [
     'baseUrl' => '',
@@ -15,11 +12,12 @@ return [
     'activeClass' => function ($page, $section) {
 	    return ($page->getPath() === $section) ? 'active' : '';
     },
-
-	'classes' => [
-		'Template' => new ClassParser(Template::class),
-		'PluginTemplate' => new ClassParser(Template::class),
-		'Post' => new ClassParser(Post::class),
-		'Image' => new ClassParser(Image::class),
-	],
+	'snippet' => function($page, $snippetFile) {
+		$snippetFile = str_replace('.', '/', $snippetFile);
+		$snippetFile = __DIR__.'/source/_partials/snippets/'.$snippetFile.'.php';
+		if (!file_exists($snippetFile)) {
+			return '';
+		}
+		return file_get_contents($snippetFile);
+	},
 ];

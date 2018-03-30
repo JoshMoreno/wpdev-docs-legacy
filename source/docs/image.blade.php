@@ -58,5 +58,5 @@
         @endsnippetPhp
     @enddocsSection
 
-    @include('_partials.docs.apiReference', ['class' => $page['classes']['Image']])
+    @include('_partials.docs.apiReference', ['class' => \WPDev\Models\Image::class])
 @endsection

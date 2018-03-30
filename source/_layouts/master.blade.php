@@ -9,6 +9,11 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+    @hasSection('page_title')
+        <title>@yield('page_title') | WPDev</title>
+    @else
+        <title>WPDev</title>
+    @endif
 </head>
 <body class="d-flex flex-column {{$body_class ?? ''}}">
     @include('_partials.header')
