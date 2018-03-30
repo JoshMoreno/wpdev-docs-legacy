@@ -10,7 +10,7 @@
                     <a class="btn btn-secondary" href="/docs">Docs</a>
                 </div>
                 <div class="col-auto pl-0">
-                    <a class="btn btn-primary">Download</a>
+                    <a href="{{$page->downloadUrl}}" class="btn btn-primary">Download</a>
                 </div>
             </div>
         </div>

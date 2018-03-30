@@ -14,7 +14,6 @@
         <ul>
             <li>PHP >= 7.1.3</li>
             <li>WordPress >= 4.9</li>
-            <li>Composer</li>
         </ul>
     @endcomponent
 
@@ -22,28 +21,26 @@
         @slot('title')
             Installation
         @endslot
-        <p>WP-CLI</p>
-        <pre>
-            <code class="language-clike">
-                # Download the plugin
-                wp plugin install https://github.com/JoshMoreno/wpdev/archive/v1.0.0-alpha.zip
-
-                # Move into wpdev folder
-                cd plugins/wpdev
-
-                # Install dependencies
-                composer install -o
-
-                # Activate
-                wp plugin activate wpdev
-            </code>
-        </pre>
-        <br>
-        <p>Old Fashion</p>
-        <ol>
-            <li>Download the plugin and drop it into the plugins folder</li>
-            <li>Run <code>composer install -o</code> in the wpdev plugin folder</li>
-            <li>Activate</li>
-        </ol>
+        <div class="mb-5">
+            <h5>WP-CLI</h5>
+            <pre>
+                <code class="language-clike">
+                    wp plugin install --activate {{$page->downloadUrl}}
+                </code>
+            </pre>
+        </div>
+        <div class="mb-5">
+            <h5>Composer</h5>
+            <pre>
+                <code class="language-clike">
+                    composer require joshmoreno/wpdev
+                </code>
+            </pre>
+            <p>Then activate in WP of course.</p>
+        </div>
+        <div class="mb-5">
+            <h5>Manually</h5>
+            <p>Nothing special. Just install and activate like any other plugin.</p>
+        </div>
     @endcomponent
 @endsection

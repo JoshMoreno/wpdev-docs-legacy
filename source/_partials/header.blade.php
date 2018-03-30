@@ -5,7 +5,7 @@
                 <a href="/">wpdev</a>
             </h4>
         </div>
-        <div class="col d-flex justify-content-end">
+        <div class="col d-flex justify-content-end pr-0">
             <a href="/docs" class="btn btn-secondary">Docs</a>
         </div>
     </nav>
