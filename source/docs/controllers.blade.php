@@ -21,7 +21,7 @@
         @slot('title')
             Naming
         @endslot
-        <p>Create controllers following the same naming convention as the <a href="https://wphierarchy.com/">WP Template Hierarchy</a>. And feel free to organize into subfolders.</p>
+        <p>Create controllers following the same file naming convention as the <a href="https://wphierarchy.com/">WP Template Hierarchy</a>. Also make sure, it follows the same folder structure. See below for examples.</p>
         <p>You can name the class whatever you'd like, but a good rule of thumb would be to name it after the file using upper camel case (aka pascal case). For example, if you have a <code>single-post.php</code> file you would name the class <code>SinglePost</code>.</p>
         <h5 class="mt-4">Examples</h5>
         <div>
@@ -29,6 +29,9 @@
         </div>
         <div>
             <p>Single Post - <code>controllers/single-post.php</code></p>
+        </div>
+        <div>
+            <p>Page Template located at <code>custom-page-templates/full-width.php</code> - <code>controllers/custom-page-templates/full-width.php</code></p>
         </div>
         <h5 class="mt-4">Gotchas</h5>
         <p>Only one controller will be run. The most specific.</p>
