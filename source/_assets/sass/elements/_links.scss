@@ -1,9 +1,0 @@
-a {
-	transition: $transition-base;
-}
-
-a.active {
-	border-left: 2px solid #46b1c2;
-	padding-left: .5em;
-	margin-left: calc(-.5em - 2px);
-}

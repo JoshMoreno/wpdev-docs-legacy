@@ -1,23 +1,11 @@
 {
-    "name": "joshmoreno/wpdev-docs",
-    "description": "Docs for the wpdev plugin.",
-    "homepage": "https://getwpdev.com",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Josh Moreno",
-            "email": "josh@joshmoreno.com"
-        }
-    ],
-    "require": {
-        "tightenco/jigsaw": "^1.1",
-        "joshmoreno/wpdev": "v1.2.0-alpha",
-        "phpdocumentor/reflection-docblock": "^4.3"
+    "require-dev": {
+        "joshmoreno/wpdev": "dev-master",
+        "league/flysystem": "^1.0"
     },
-    "autoload": {
-        "psr-4": {
-            "WPDev\\Docs\\": "inc/"
-        },
-      "files": ["inc/helpers.php"]
+  "autoload-dev": {
+    "psr-4": {
+      "WPDevDocs\\": "inc/"
     }
+  }
 }
