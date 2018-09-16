@@ -1,4 +1,1 @@
 root: ./build/
-
-structure:
-  readme: ./readme.md
