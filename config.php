@@ -5,7 +5,7 @@ use Illuminate\View\Compilers\BladeCompiler;
 return [
     'baseUrl' => '',
     'production' => false,
-	'downloadUrl' => 'https://github.com/JoshMoreno/wpdev/releases/download/v1.2.2-alpha/wpdev.zip',
+	'downloadUrl' => 'https://github.com/JoshMoreno/wpdev/releases/download/v2.0.1-alpha/wpdev.zip',
     'githubUrl' => 'https://github.com/JoshMoreno/wpdev',
     'collections' => ['features', 'classes',],
     'navItems' => require __DIR__.'/data/navigation.php',
